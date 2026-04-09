@@ -1,0 +1,92 @@
+network: polkadot
+chain: polkadot
+turboflakes_api_host: polkadot-onet-api.turboflakes.io
+scrape_interval: 120s      # Fetch from API every 2 mins
+concurrency_limit: 3       # Max 3 parallel requests to avoid 429s
+validators:
+  - name: luganodes-misty-bear
+    address: 1vTaLKEyj2Wn9xEkUGixBkVXJAd4pzDgXzz9CuVjhVqhHRQ
+  - name: w3f-jasmine-nickel
+    address: 14Tx55srzt7iCKJFpXhjfFsKJ72ZKc1oAWQiLxhpEGWgPKkt
+  - name: w3f-olive-gold
+    address: 15uaPHZykn6oGxYsgwsFd1ijFYEhjEBLWtMzYKaweBazNB4F
+  - name: w3f-poppy-silver
+    address: 15SfpwN4FSH1kCV6pJRrNX3HUSGHFaHzp8qvEBbzoyJd8fbV
+  - name: w3f-banyan-soul
+    address: 13ZRcPuGfQm1p4k5GbUmceMYhD8miqWgRU53mJPaBewXQ1Ak
+  - name: w3f-fire-peri
+    address: 13n3tWbvGoEGssVsdLP9JKcM3QAT3xfc8Xe9V1bfYNLMTNa9
+  - name: w3f-twin-king
+    address: 1583xnyfo4aWpY4BS3JT85kyKzLpxBjQkRtXCw6fHQzQMw2G
+  - name: w3f-rainbow-salmon
+    address: 1SPmDdpHotxYs9qZH5MVqV4dgpZ5JzrMqDxUrS9ovMZ1zzW 
+  - name: w3f-cryptic-ape
+    address: 1afJZTC93WLb5BaqaKJ6yScHUypiD2VTht9tQUmS2SupzY3
+  - name: w3f-innocent-evil
+    address: 12MnZkPNLyf5jfsbqSa6RKCnDvbqwf1kPiGfFPYjmWpRGgza
+  - name: w3f-empire-earth
+    address: 15mhJE8zk6gdakNNNHCKYhuVYfh1fJysj4mQ7WnNii6Sbaaj
+  - name: w3f-wololo-priest
+    address: 13AcEJZLJCCCHqDMcSZuxzuVqrsNGffSFe7axf5ciN4RkYLS
+  - name: brc-minecraft-empire
+    address: 14fu8gsdLTMvAWxq2c7DJxyfbcHmkFWcngxAkxmMtX3fDtk8
+  - name: w3f-brume-plum
+    address: 15aMZBJvd2nJp6puJeV88Xx6VUw6vSVtNUcTkPT78Q6Y9ffP
+  - name: brc-flat-baron
+    address: 155DgtpDborwtUFPZ4kPBFX7JTFfs7AxfzDqdu5uz8Sun4Qy
+  - name: brc-concoct-paladin
+    address: 12LCH7wmj8LAa4bXLq1iQnDbeZZfE9AUjvP7xqDNiR87fLdp
+  - name: brc-two-thrones
+    address: 1hT5LC2keHNNKAC7zR5JFJ8CNBi5mXhuphP4Tt6YynijgnL
+  - name: brc-mogu-pogu
+    address: 16hWLHbxMwucyrzpWcEMGQtVzXY4rBtyYTRhPix5rJeeKT8N
+      # new 15 w3f machines     
+  - name: w3f-lunar-tide
+    address: 14R9KbsqtCEcCYWFxuC3PWsAAuREL2cMZrsrfyXcCWh6KVv3
+  - name: w3f-solar-flare
+    address: 14EuKYhiHajkunWY9YUzjBdcPhr3SNgzXZrbiq2iutduYL8N
+  - name: w3f-arctic-wind
+    address: 128wGjjRERkG22fxv2zcCYpdd4hfcvkpfvPvViDS66hyVG36
+  - name: w3f-desert-dune
+    address: 12vKNm9vQxfg5r7odEhdRGUVy8mkBhf4Ke1R4qdApGqLpoe2
+  - name: w3f-mountain-peak
+    address: 12onu8iRPaEVYXiHVbpXXeTJfxsToKEgYbLEuB3PM8De9ps3
+  - name: w3f-ocean-deep
+    address: 12y3weGJdy4Acym4qjBwuFVaUegNsf61sUWYQjahu4PvGjPH
+  - name: w3f-forest-mist
+    address: 162E7wzBAbbEkuRSXZWfFNtDDBrRHNjqh4V8d1Crqpvh5CCx
+  - name: w3f-river-flow
+    address: 1FirjCxP8uqfpLnTEzkQUsQyxRANTPWCrvxvAdYNJHpFHQU
+  - name: w3f-cosmic-dust
+    address: 13Dnj8xDPGkrhKd6XB47C1C4Gikobo7GU6ShrmhgTT2PEgU
+  - name: w3f-stellar-drift
+    address: 13TcA6VmfBHW2wyejXeV5NW2ixEjfudPAJcxKBLLXAGHx15
+  - name: w3f-comet-tail
+    address: 1XjnkPtnVtgEpYNjeY7XHkHREfaYw2oNcBFFeJaZJ4Cdt2E
+  - name: w3f-aurora-borealis
+    address: 1MVxLjpoUYQmgoeSUP7kVo5NY8oJFaCs1TuShdNhuhRmxeU
+  - name: w3f-meteor-shower
+    address: 13bab9cQtGm2PThpcfNj3yV1FHFKUYA6YGArw7vbeQJ2vdgW
+  - name: w3f-galaxy-stream
+    address: 13Bn1gNARVdHrPerEUAP3Zpk7v1L6SNEYn5db5uMinZVC32R
+  - name: w3f-asteroid-belt
+    address: 14u39E3MfJo1vwkxnXEaY4FwxQFAqRqGWmBFqmSi5AeyAMje
+      # new 10 w3f machines
+  - name: w3f-planet-ring
+    address: 16Wn9eymWDaZkSGEtrCrCcUwY3HjNZ2sjy15eT3Qira3s1xf
+  - name: w3f-eclipse-shadow
+    address: 131wbaUPKBjvEtP9QmTSUTJH6PCbysKVELGp7ZNe7wU6ZhwT
+  - name: w3f-patient-skink
+    address: 16jXPr8P5SYEf5s9zmbE91hXv6BzdmeWwdqnJyzEvj6qp6Za
+  - name: w3f-keen-worm
+    address: 12i9rCBAqEJurUsScac2piggShQUMCoe9RBxNqDEYqoaFx2X
+  - name: w3f-subtle-swift
+    address: 12NLGZzTnMp3uEnj7dGrNkwZ1JaLS8zX5q5kEE4eB8ybZji3
+  - name: w3f-expert-aardvark
+    address: 1qhRGhae2HxrVyGE33PdN7YTnVFsWTbKjy2WeV1GHJSy8dD
+  - name: w3f-amazing-demon
+    address: 12jvj83B68Hjeg4LyxWaLrv1G7aeMqEuWpg15HzN9DAZdhYn
+  - name: w3f-crooked-vigilant
+    address: 133q4gGddRQtoJaQFpftLtpFPRa3YS2TtRqNFU6EKoQgrZ1q
+  - name: w3f-bloom-even
+    address: 12f4KyvTWi2mNuSghHujATaheyZoN485DGy3Nr9ytWW7gfV6

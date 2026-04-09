@@ -1,0 +1,96 @@
+network: kusama
+chain: kusama
+turboflakes_api_host: kusama-onet-api.turboflakes.io
+scrape_interval: 60s      # Kusama is faster, maybe scrape more often
+concurrency_limit: 5
+validators:
+  - name: w3f-allegro-nocturnal
+    address: Ewm8afSMKmFESN8P2a5YxdEV23NEesyjR1Bfxh5GDF5f8mP
+  - name: w3f-cadaence-resonance
+    address: FG3z3FuACbDQvJ4opfQrx35erUWq6ZnavTEpbZkF8p8euPv
+  - name: w3f-chorale-echo
+    address: Eg5wTqRe95CbDtAXq8GD4y9A95JcsqkkCBhwsu26R324MGp
+  - name: w3f-concise-ray
+    address: GHQzA9GGdzK3PJEr5JZMwjkVm3SsWEtaxbeWjS9zPKJESVo
+  - name: w3f-crescendo-veil
+    address: EiEJSk7Mcj1TzGLjrVaXDth5sYC789MDpXg3pqfmBeNs78y
+  - name: w3f-electric-dawn
+    address: HjTFY9QajLqbHwNQBoX8wGr5qWwTU3e8f2X57QG1i5s6XaR
+  - name: w3f-emerging-yeti
+    address: CduHvQBASPuLwXE2pHcQrZ6Fh3NLw7Wy33HHN2Et3DgcLYa
+  - name: w3f-fugue-aurora
+    address: F4e5YUfphoUdPxNBvnLo6Zh5isPYM7EEvnA4ariPCoyf5WT
+  - name: w3f-lyra-sonic
+    address: F2K4EUsGhrrYA3GgpnL9AGUwP84VM2JJYAAcFXTYM5L6XpF
+  - name: w3f-manja-curing
+    address: EJUoNJXEGrYHQHSDd3ZYyiMHEiXDgWNkTc75k451VasZbiv
+  - name: w3f-midnight-sun
+    address: F58x6PnihEMysYzRKTaXbqgCYyPKLNTQgZzG7GcQsxJQwHo
+  - name: w3f-nocturne-wave
+    address: HBxY1RHMewQigLsUByGgYPPXHvtem6wUxbTGVNnfHQt1wCZ
+  - name: w3f-overture-silenc
+    address: GxwxKe4UfQYh1Nmz6nboEFaFJL35SR6pa8TtVGRh2GYwY5W
+  - name: w3f-polite-killdeer
+    address: EzQs28heqJHRuzpup3wa8EZvE2Q2ebNWw48eD78K6XCxpQ3
+  - name: w3f-select-foxhound
+    address: HCdhSS1LWZ8vEwh2Nat6hmBAP6SA696EDTXZogYhKKwjwfG
+  - name: w3f-sonta-echo
+    address: G2SJqzzWmpzmmd9EQkBJb7SoKbsZ82mubPFCM7jZ3YZsX2D
+  - name: w3f-suitable-falcon
+    address: EoqsGYUzUnhxgbgH5fvtHBQajiFvCEKWqZKcscMTdBNR5Bm
+  - name: w3f-tempo-harmonics
+    address: HPB2PvzKMrkUSNTWz8PQQRmiiFTc2jxQWB29S8EFPP4cL2B
+  - name: w3f-together-whale
+    address: HUjAww9QPrheeGa7nkJ9fEDzHa7iWVwX1uuctZ8sMBK2VqJ
+  - name: w3f-unique-javelin
+    address: HhqP1GULkNECrQWxZeEjBwe45bCyjs8yoiGteD39qgk3g9L
+  - name: w3f-united-sculpin
+    address: FezmXgbywTXPrzgnXgaEnkMxBYSkc2mHLG9h4zEwJs7VC88
+  - name: w3f-brave-curie
+    address: D19isCwiHCCqFLkRELqSiZzcCeXcVDAPpWNdjZ88piU3Z1w
+  - name: w3f-clever-feynman
+    address: F5By7viR7vb1tgAie91rdVf35MhdsZ655r5efMZaNQbPZCr
+  - name: w3f-determined-lovelace
+    address: HZP3oqsKAMpjqfDVjQYYZNUaCdyhyk4HquuibZMR4VPgwbc
+  - name: w3f-eager-darwin
+    address: CjFgEZEyaUkYKpjymRMp55sBKvn3UzgceAWPG7G2pGcCr9H
+  - name: w3f-eloquent-shockley
+    address: EJesj6jmpgABBCPCwWPRoq6rMCV3uZfynkwTHMZ5nzfwHGT
+  - name: w3f-emerald-hawthorne
+    address: Cj5igvv85ZrsiBWGe8JUA4Hu2ZRtxWcrXPF5AjArUp6xTv3
+  - name: w3f-gallant-edison
+    address: ErNq9Dupp8ZsQ8UjbT2z2jMQ8zGCiJr8PiDVqsz6Xj7KxCw
+  - name: w3f-gifted-vaughan
+    address: GCBaUpJWnsY7V9Lf8eDwhNNDxNaNTTaBLdLmjVqahm9Mdbj
+  - name: w3f-infallible-pike
+    address: D8myLU8yt3FgWrLy2bQz9ZPaqd6T7fze9ah6HeYf5yBPwBR
+  - name: w3f-jolly-goodall
+    address: G2SB7BM8gwBdkHyANJvo9dYXuzCHBfb4jTxwAZ1avsHZGfZ
+  - name: w3f-kind-torvalds
+    address: GDRBw41L776BtsjFTQKWs45Uvx3iHmT593XGEy4L5qMfrd1
+  - name: w3f-lucid-hopper
+    address: GF2YdkXPYZ7y6zAeDZCXwvjeft2DyPZce7G7vxiuwaDDpqE
+  - name: w3f-modest-einstein
+    address: Ckswkntpdv7x9zZSr987exmTvznMi1xWnxjRLr8PkaA6BRf
+  - name: w3f-nifty-wozniak
+    address: HnKNfnDQi75LRatrgg6jRk9BDT5ArNazofrdCDhQjBQrSYL
+  - name: w3f-optimistic-hawking
+    address: HbpSYR56dEFfLPUtYa6HSoWPngKg3BG2byiWyEcqfmJKkYC
+  - name: w3f-pensive-tesla
+    address: HCGTS1e4TTxykdZLumhQGysyWLokqdLWjq3Kor2QHTxBB7t
+  - name: w3f-serene-kalam
+    address: Fsy1atU4KsJWzxh8UFVE72K6oDybwgbfYiA3niXM5FXqW2V
+  - name: w3f-sharp-taussig
+    address: EcMaz8CqX4LMZn9TwdVEoiasbrhcdsZGWQvxAuNbArb4X5u
+  - name: w3f-silly-bartik
+    address: FXTLCnEmRwkrzpRNA18psrqcSXboZkqfzCdNv64XRwDM27F
+  - name: w3f-stoic-turing
+    address: EXZfmocy8e1eSb6xzoHQsrDwsrckFbwFa54EiFX2gnYER6h
+  - name: w3f-vibrant-kary
+    address: FX5pku6XjJnn2Cr4xiFe57rzDFTQovc1qqGo7FKRQAer19z
+  - name: w3f-vigilant-thompson
+    address: H7rZoUxFeGbEcHFrtcDV246BiUx3Amw8HzA89prEP888dYp
+  - name: w3f-wizardly-mccarthy
+    address: DTFQwrb88mW3H6Mkg1axdX1HqxhfmKq5NWToqGo7xD7MXhX
+  - name: w3f-zealous-ritchie
+    address: DmTmZuaMenfeEGCypL9qfg73mnph8SLqz98RThnewyLFGru
