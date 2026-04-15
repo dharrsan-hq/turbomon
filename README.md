@@ -55,7 +55,7 @@ Create a YAML file (e.g., `polkadot-stash.yaml`):
 ```yaml
 network: polkadot
 turboflakes_api_host: polkadot-onet-api.turboflakes.io
-rpc_url: [https://rpc.polkadot.io](https://rpc.polkadot.io)  # Substrate RPC for Active Set verification
+rpc_url: https://rpc.polkadot.io  # Substrate RPC for Active Set verification
 scrape_interval: 120s            # API/RPC polling frequency
 concurrency_limit: 3             # Max simultaneous API calls
 validators:
