@@ -15,6 +15,7 @@ type ValidatorConfig struct {
 type Config struct {
 	Network    string            `yaml:"network"`
 	Host       string            `yaml:"turboflakes_api_host"`
+	RPCURL     string            `yaml:"rpc_url"` // NEW: RPC endpoint
 	Validators []ValidatorConfig `yaml:"validators"`
 	// Performance Settings
 	ScrapeInterval   time.Duration `yaml:"scrape_interval"`   // e.g., 60s

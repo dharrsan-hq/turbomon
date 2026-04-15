@@ -1,5 +1,6 @@
 network: polkadot
 chain: polkadot
+rpc_url: wss://rpc.polkadot.io
 turboflakes_api_host: polkadot-onet-api.turboflakes.io
 scrape_interval: 120s      # Fetch from API every 2 mins
 concurrency_limit: 3       # Max 3 parallel requests to avoid 429s

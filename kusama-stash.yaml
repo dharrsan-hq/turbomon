@@ -1,5 +1,6 @@
 network: kusama
 chain: kusama
+rpc_url: wss://kusama-rpc.polkadot.io
 turboflakes_api_host: kusama-onet-api.turboflakes.io
 scrape_interval: 120s      # Kusama is faster, maybe scrape more often
 concurrency_limit: 3
