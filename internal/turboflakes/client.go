@@ -17,6 +17,11 @@ type GlobalSession struct {
 	Eix int `json:"eix"`
 }
 
+// NEW: Struct to capture the points for a specific parachain
+type ParaStat struct {
+	Pt int `json:"pt"`
+}
+
 type ValidatorSession struct {
 	IsAuth bool `json:"is_auth"`
 	IsPara bool `json:"is_para"`
@@ -27,6 +32,8 @@ type ValidatorSession struct {
 	ParaSummary struct {
 		Pt int `json:"pt"`
 	} `json:"para_summary"`
+	// Ensure this is exactly here, at the top level of the struct
+	ParaStats map[string]ParaStat `json:"para_stats"`
 }
 
 type ValidatorProfile struct {
@@ -36,8 +43,9 @@ type ValidatorProfile struct {
 
 func NewClient(host string) *Client {
 	return &Client{
-		Host:       host,
-		HttpClient: &http.Client{Timeout: 10 * time.Second},
+		Host: host,
+		// SRE Fix: Increased timeout to 20s to prevent context deadline drops
+		HttpClient: &http.Client{Timeout: 20 * time.Second},
 	}
 }
 
@@ -52,7 +60,7 @@ func (c *Client) GetValidatorData(address string) (*ValidatorSession, *Validator
 	var sData ValidatorSession
 	var pData ValidatorProfile
 
-	sessUrl := fmt.Sprintf("https://%s/api/v1/validators/%s?session=current&show_summary=true", c.Host, address)
+	sessUrl := fmt.Sprintf("https://%s/api/v1/validators/%s?session=current&show_summary=true&show_stats=true", c.Host, address)
 	profUrl := fmt.Sprintf("https://%s/api/v1/validators/%s/profile", c.Host, address)
 
 	if err := c.getJSON(sessUrl, &sData); err != nil {
@@ -65,14 +73,33 @@ func (c *Client) GetValidatorData(address string) (*ValidatorSession, *Validator
 	return &sData, &pData, nil
 }
 
+// SRE Fix: Added exponential backoff and retry logic
 func (c *Client) getJSON(url string, target interface{}) error {
-	resp, err := c.HttpClient.Get(url)
-	if err != nil {
-		return err
+	var lastErr error
+	maxRetries := 3
+
+	for i := 0; i < maxRetries; i++ {
+		resp, err := c.HttpClient.Get(url)
+		if err != nil {
+			lastErr = err
+			// Exponential backoff: 1s, 2s, 4s...
+			time.Sleep(time.Duration(1<<i) * time.Second)
+			continue
+		}
+
+		defer resp.Body.Close()
+
+		if resp.StatusCode == 200 {
+			return json.NewDecoder(resp.Body).Decode(target)
+		}
+
+		// Handle explicit Rate Limits
+		if resp.StatusCode == 429 {
+			time.Sleep(5 * time.Second)
+		}
+
+		lastErr = fmt.Errorf("API %s returned %d", url, resp.StatusCode)
 	}
-	defer resp.Body.Close()
-	if resp.StatusCode != 200 {
-		return fmt.Errorf("API %s returned %d", url, resp.StatusCode)
-	}
-	return json.NewDecoder(resp.Body).Decode(target)
+
+	return fmt.Errorf("after %d attempts, last error: %v", maxRetries, lastErr)
 }

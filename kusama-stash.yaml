@@ -1,8 +1,8 @@
 network: kusama
 chain: kusama
 turboflakes_api_host: kusama-onet-api.turboflakes.io
-scrape_interval: 60s      # Kusama is faster, maybe scrape more often
-concurrency_limit: 5
+scrape_interval: 120s      # Kusama is faster, maybe scrape more often
+concurrency_limit: 3
 validators:
   - name: w3f-allegro-nocturnal
     address: Ewm8afSMKmFESN8P2a5YxdEV23NEesyjR1Bfxh5GDF5f8mP
