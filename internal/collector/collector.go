@@ -138,7 +138,7 @@ func (c *PolkadotCollector) scrapeAll() {
 	// 1. Fetch Active Set FIRST (Fail silently and continue if RPC is down)
 	activeSet, err := c.getActiveSet()
 	if err != nil {
-		c.logger.Warn("failed to fetch active set from RPC; all validators will report status 0", "error", err)
+		c.logger.Warn("failed to fetch active set from RPC; retaining last cached status for all validators", "error", err)
 	}
 
 	// 2. Fetch Global Session Info
@@ -174,10 +174,17 @@ func (c *PolkadotCollector) scrapeAll() {
 				return
 			}
 
-			// Determine if active from our pre-fetched map
 			isActive := 0.0
-			if activeSet != nil && activeSet[val.Address] {
-				isActive = 1.0
+			if activeSet != nil {
+				if activeSet[val.Address] {
+					isActive = 1.0
+				}
+			} else {
+				c.mu.RLock()
+				if prev, ok := c.validatorCache[val.Address]; ok {
+					isActive = prev.IsActive
+				}
+				c.mu.RUnlock()
 			}
 
 			authVal, backVal := 0.0, 0.0
