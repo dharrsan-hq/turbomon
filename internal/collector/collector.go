@@ -26,6 +26,7 @@ type CachedMetrics struct {
 	EraPoints   float64
 	SessPoints  float64
 	BackPoints  float64
+	MissedVotes float64
 	ParaPoints  map[string]float64
 	Era         string
 	Session     string
@@ -42,12 +43,12 @@ type PolkadotCollector struct {
 	globalSess     float64
 
 	// Metric Descriptors
-	eraNum, sessNum                   *prometheus.Desc
-	validatorStatus                   *prometheus.Desc // NEW: Metric Descriptor
-	isAuthoring, isBacking            *prometheus.Desc
-	nomCount, nomStake                *prometheus.Desc
-	eraPoints, sessPoints, backPoints *prometheus.Desc
-	paraBackingPoints                 *prometheus.Desc
+	eraNum, sessNum                                *prometheus.Desc
+	validatorStatus                                *prometheus.Desc // NEW: Metric Descriptor
+	isAuthoring, isBacking                         *prometheus.Desc
+	nomCount, nomStake                             *prometheus.Desc
+	eraPoints, sessPoints, backPoints, missedVotes *prometheus.Desc
+	paraBackingPoints                              *prometheus.Desc
 }
 
 func NewPolkadotCollector(cfg *config.Config, logger *slog.Logger) *PolkadotCollector {
@@ -74,6 +75,7 @@ func NewPolkadotCollector(cfg *config.Config, logger *slog.Logger) *PolkadotColl
 		sessPoints:        prometheus.NewDesc("substrate_session_points", "Total session points (Auth + Backing)", valLabels, nil),
 		backPoints:        prometheus.NewDesc("substrate_backing_points", "Total points from parachain backing", valLabels, nil),
 		paraBackingPoints: prometheus.NewDesc("substrate_validator_para_backing_points", "Points earned from backing a specific parachain", paraLabels, nil),
+		missedVotes:       prometheus.NewDesc("substrate_missed_votes", "Total missed votes for the current session", []string{"network", "address", "name", "era", "session"}, nil),
 	}
 
 	go c.startBackgroundScraper()
@@ -213,6 +215,7 @@ func (c *PolkadotCollector) scrapeAll() {
 				EraPoints:   float64(sData.Auth.Ep),
 				SessPoints:  sessionPts,
 				BackPoints:  backingPts,
+				MissedVotes: float64(sData.ParaSummary.Mv),
 				ParaPoints:  pPoints,
 				Era:         eraStr,
 				Session:     sessStr,
@@ -265,6 +268,7 @@ func (c *PolkadotCollector) Collect(ch chan<- prometheus.Metric) {
 		ch <- prometheus.MustNewConstMetric(c.eraPoints, prometheus.GaugeValue, data.EraPoints, baseLabels...)
 		ch <- prometheus.MustNewConstMetric(c.sessPoints, prometheus.GaugeValue, data.SessPoints, baseLabels...)
 		ch <- prometheus.MustNewConstMetric(c.backPoints, prometheus.GaugeValue, data.BackPoints, baseLabels...)
+		ch <- prometheus.MustNewConstMetric(c.missedVotes, prometheus.GaugeValue, data.MissedVotes, baseLabels...)
 
 		for paraID, pts := range data.ParaPoints {
 			pLabels := append([]string{}, baseLabels...)

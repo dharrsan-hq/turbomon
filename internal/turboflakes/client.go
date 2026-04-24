@@ -31,6 +31,7 @@ type ValidatorSession struct {
 	} `json:"auth"`
 	ParaSummary struct {
 		Pt int `json:"pt"`
+		Mv int `json:"mv"`
 	} `json:"para_summary"`
 	// Ensure this is exactly here, at the top level of the struct
 	ParaStats map[string]ParaStat `json:"para_stats"`
